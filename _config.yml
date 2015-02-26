@@ -1,18 +1,17 @@
 # Dependencies
 markdown:         redcarpet
 redcarpet:
-    extensions: [with_toc_data]
+      extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "tables", "with_toc_data"]
 
 pygments:         true
 
 # Permalinks
 permalink:        pretty
 
+gems:           ['jekyll-multiple-languages']
+
 # Server
-host:             0.0.0.0
-port:             9001
 baseurl:          /
-url:              http://localhost:9001
 encoding:         UTF-8
 
 exclude:
@@ -27,7 +26,7 @@ meta:
   keywords:     Cube-SDK, Android development framework, Image Loader, Easy netwrok request.
   author:       liaohuqiu@gmail.com
 
-languages:      ["en", "cn"]
+languages:          ['en', 'cn']
 language_default:   "en"
 
 left_nav:
