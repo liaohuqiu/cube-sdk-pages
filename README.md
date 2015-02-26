@@ -1,6 +1,1 @@
-bt-docs
-=======
-
-A bootstrap docs like document site.
-
-Please visit bt-docs.liaohuqiu.net.
+Github Pages content for: http://cube-sdk.liaohuqiu.net/
