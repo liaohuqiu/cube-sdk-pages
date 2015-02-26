@@ -3,34 +3,32 @@ layout: default
 title: 常用组件
 lead: ""
 ---
-<h1 id="page-indicator">翻页联动Tab</h1>
 
-<h1 id="ptr-frame">下拉刷新容器</h1>
+<h1 id="ptr-lib">下拉刷新</h1>
 
-利用下拉刷新容器，可以轻松实现任意布局的的下拉刷新功能，以`GridView`为例：
+下拉刷新已经独立成为一个项目: https://github.com/liaohuqiu/android-Ultra-Pull-To-Refresh
 
-```xml
-<in.srain.cube.sample.ui.views.header.ptr.PtrFrameDemo
+<div style='margin-bottom:100px'>
+</div>
 
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/ly_ptr_frame"
-    android:layout_height="match_parent"
-    android:layout_width="match_parent"
-    app:ptr_content="@+id/ly_image_list_grid">
+<h1 id="grid-with-with-header-and-footer">GridViewWithHeaderAndFooter</h1>
 
-    <GridView
-        android:id="@+id/ly_image_list_grid"
-        android:paddingLeft="12dp"
-        android:paddingRight="12dp"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:fadingEdge="none"
-        android:focusable="false"
-        android:horizontalSpacing="10dp"
-        android:listSelector="@android:color/transparent"
-        android:numColumns="2"
-        android:scrollbarStyle="outsideOverlay"
-        android:stretchMode="columnWidth" />
+可以`addFooterView()` 和 `addHeaderView()` 的 `GridView`，已经独立成为一个项目。
 
-</in.srain.cube.sample.ui.views.header.ptr.PtrFrameDemo>
-```
+https://github.com/liaohuqiu/android-GridViewWithHeaderAndFooter
+
+<div style='margin-bottom:100px'>
+</div>
+
+<h1 id="load-more">加载更多</h1>
+
+<div class='row'>
+    <div class='col-md-4'>
+        <p>ListView 的加载更多</p>
+        <img src="http://srain-github.qiniudn.com/load-more/load-more-for-list-view.gif" width="100%" style='border: #f1f1f1 solid 1px' />
+    </div>
+    <div class='col-md-4 col-md-offset-2'>
+        <p>GridView 的加载更多</p>
+        <img src="http://srain-github.qiniudn.com/load-more/load-more-for-grid-view.gif" width="100%" style='border: #f1f1f1 solid 1px' />
+    </div>
+</div>

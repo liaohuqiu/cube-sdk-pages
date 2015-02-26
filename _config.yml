@@ -50,6 +50,8 @@ left_nav:
         title:    图片加载组件
       - path:     /cn/request
         title:    网络请求
+      - path:     /cn/cache
+        title:    缓存
       - path:     /cn/request-cache
         title:    请求缓存
       - path:     /cn/views
