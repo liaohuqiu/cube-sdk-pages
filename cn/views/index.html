@@ -78,6 +78,10 @@
                 </li>
                 
                 <li>
+                <a href="/cn/cache">缓存</a>
+                </li>
+                
+                <li>
                 <a href="/cn/request-cache">请求缓存</a>
                 </li>
                 
@@ -118,35 +122,35 @@
 
       <div class="row">
         <div class="col-md-9" role="main">
-          <h1 id="page-indicator">翻页联动Tab</h1>
+          <h1 id="ptr-lib">下拉刷新</h1>
 
-<h1 id="ptr-frame">下拉刷新容器</h1>
+<p>下拉刷新已经独立成为一个项目: <a href="https://github.com/liaohuqiu/android-Ultra-Pull-To-Refresh">https://github.com/liaohuqiu/android-Ultra-Pull-To-Refresh</a></p>
 
-<p>利用下拉刷新容器，可以轻松实现任意布局的的下拉刷新功能，以<code>GridView</code>为例：</p>
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;in.srain.cube.sample.ui.views.header.ptr.PtrFrameDemo</span>
+<div style='margin-bottom:100px'>
+</div>
 
-    <span class="na">xmlns:app=</span><span class="s">&quot;http://schemas.android.com/apk/res-auto&quot;</span>
-    <span class="na">android:id=</span><span class="s">&quot;@+id/ly_ptr_frame&quot;</span>
-    <span class="na">android:layout_height=</span><span class="s">&quot;match_parent&quot;</span>
-    <span class="na">android:layout_width=</span><span class="s">&quot;match_parent&quot;</span>
-    <span class="na">app:ptr_content=</span><span class="s">&quot;@+id/ly_image_list_grid&quot;</span><span class="nt">&gt;</span>
+<h1 id="grid-with-with-header-and-footer">GridViewWithHeaderAndFooter</h1>
 
-    <span class="nt">&lt;GridView</span>
-        <span class="na">android:id=</span><span class="s">&quot;@+id/ly_image_list_grid&quot;</span>
-        <span class="na">android:paddingLeft=</span><span class="s">&quot;12dp&quot;</span>
-        <span class="na">android:paddingRight=</span><span class="s">&quot;12dp&quot;</span>
-        <span class="na">android:layout_width=</span><span class="s">&quot;match_parent&quot;</span>
-        <span class="na">android:layout_height=</span><span class="s">&quot;match_parent&quot;</span>
-        <span class="na">android:fadingEdge=</span><span class="s">&quot;none&quot;</span>
-        <span class="na">android:focusable=</span><span class="s">&quot;false&quot;</span>
-        <span class="na">android:horizontalSpacing=</span><span class="s">&quot;10dp&quot;</span>
-        <span class="na">android:listSelector=</span><span class="s">&quot;@android:color/transparent&quot;</span>
-        <span class="na">android:numColumns=</span><span class="s">&quot;2&quot;</span>
-        <span class="na">android:scrollbarStyle=</span><span class="s">&quot;outsideOverlay&quot;</span>
-        <span class="na">android:stretchMode=</span><span class="s">&quot;columnWidth&quot;</span> <span class="nt">/&gt;</span>
+<p>可以<code>addFooterView()</code> 和 <code>addHeaderView()</code> 的 <code>GridView</code>，已经独立成为一个项目。</p>
 
-<span class="nt">&lt;/in.srain.cube.sample.ui.views.header.ptr.PtrFrameDemo&gt;</span>
-</code></pre></div>
+<p><a href="https://github.com/liaohuqiu/android-GridViewWithHeaderAndFooter">https://github.com/liaohuqiu/android-GridViewWithHeaderAndFooter</a></p>
+
+<div style='margin-bottom:100px'>
+</div>
+
+<h1 id="load-more">加载更多</h1>
+
+<div class='row'>
+    <div class='col-md-4'>
+        <p>ListView 的加载更多</p>
+        <img src="http://srain-github.qiniudn.com/load-more/load-more-for-list-view.gif" width="100%" style='border: #f1f1f1 solid 1px' />
+    </div>
+    <div class='col-md-4 col-md-offset-2'>
+        <p>GridView 的加载更多</p>
+        <img src="http://srain-github.qiniudn.com/load-more/load-more-for-grid-view.gif" width="100%" style='border: #f1f1f1 solid 1px' />
+    </div>
+</div>
+
         </div>
         <div class="col-md-3">
           <div class="bs-sidebar hidden-print" role="complementary">
