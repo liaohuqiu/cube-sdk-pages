@@ -56,6 +56,8 @@ left_nav:
         title:    请求缓存
       - path:     /cn/views
         title:    常用组件
+      - path:     /cn/load-more
+        title:    加载更多
 
 right_nav:
   - title:    English
