@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<meta name="description" content="A android development framework. It makes loading image and network request easy.">
+
+
+<meta name="keywords" content="Cube-SDK, Android development framework, Image Loader, Easy netwrok request.">
+
+<meta name="author" content="liaohuqiu@gmail.com">
+
+<title>
+  
+  加载更多 &middot; Cube SDK
+  
+</title>
+
+<!-- Bootstrap core CSS -->
+<link href="/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Documentation extras -->
+<link href="/assets/css/docs.min.css" rel="stylesheet">
+<link href="/assets/css/app.css" rel="stylesheet">
+<!--[if lt IE 9]><script src="../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+  <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<!-- Favicons -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/ico/apple-touch-icon-144-precomposed.png">
+<link rel="shortcut icon" href="/assets/ico/favicon.ico">
+
+<script>
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-43024238-2']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+  </head>
+  <body>
+    <a class="sr-only" href="#content">Skip to main content</a>
+
+    <!-- Docs master nav -->
+    <header class="navbar navbar-static-top bs-docs-nav" role="banner">
+    <div class="container">
+        
+        <div class="navbar-header">
+            <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="/cn" class="navbar-brand">Cube</a>
+        </div>
+        <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+            <ul class="nav navbar-nav">
+                
+                <li>
+                <a href="/cn/imageloader">图片加载组件</a>
+                </li>
+                
+                <li>
+                <a href="/cn/request">网络请求</a>
+                </li>
+                
+                <li>
+                <a href="/cn/cache">缓存</a>
+                </li>
+                
+                <li>
+                <a href="/cn/request-cache">请求缓存</a>
+                </li>
+                
+                <li>
+                <a href="/cn/views">常用组件</a>
+                </li>
+                
+                <li>
+                <a href="/cn/load-more">加载更多</a>
+                </li>
+                
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                
+                <li>
+                <a href="/">English</a>
+                </li>
+                
+                <li>
+                <a href="/cn">简体中文</a>
+                </li>
+                
+                <li>
+                <a href="https://github.com/liaohuqiu/cube-sdk">Fork on Github</a>
+                </li>
+                
+            </ul>
+        </nav>
+    </div>
+</header>
+
+
+    <!-- Docs page layout -->
+    <div class="bs-header" id="content">
+      <div class="container">
+        <h1>加载更多</h1>
+        <p>简单，易用，可扩展</p>
+      </div>
+    </div>
+
+    <div class="container bs-docs-container">
+
+      <div class="row">
+        <div class="col-md-9" role="main">
+          <h1 id='feature'>加载更多简介</h1>
+
+<hr>
+
+<p>加载更多是应用常用的一种交互形式。经常会和下拉刷新一起出现。不过这两个是不同的组件。</p>
+
+<p>本方案仅关注加载更多。结构简单，使用方便。可扩展性极强。</p>
+
+<h3 id="应用场景">应用场景</h3>
+
+<p>ListView 或者 GridView 滑动到底部时。自动加载更多或者手动点击加载更多。</p>
+
+<p>加载失败后，点击加载更多。</p>
+
+<p>根据应用情况，可以一进入页面就触发加载更多接口，加载第一页，也可不触发。</p>
+
+<h3 id="目前支持的控件">目前支持的控件</h3>
+
+<ol>
+<li>ListView</li>
+<li><p>GridViewWithHeaderAndFooter</p>
+
+<p>普通的GridView无法支持addHeaderView 和 addFooterView。<code>GridViewWithHeaderAndFooter</code> 支持。</p></li>
+</ol>
+
+<h3 id="特性">特性</h3>
+
+<ol>
+<li>自动加载更多 / 点击加载更多</li>
+<li>错误时，点击加载重试</li>
+<li>轻松自定义UI自定义UI</li>
+</ol>
+
+<h1 id='how-to'>用法</h1>
+
+<hr>
+
+<h3 id="xml-中布局好元素">xml 中布局好元素</h3>
+
+<ol>
+<li><p>ListView</p>
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;in.srain.cube.views.loadmore.LoadMoreListViewContainer</span>
+    <span class="na">android:id=</span><span class="s">&quot;@+id/load_more_list_view_container&quot;</span>
+    <span class="na">android:layout_width=</span><span class="s">&quot;match_parent&quot;</span>
+    <span class="na">android:layout_height=</span><span class="s">&quot;match_parent&quot;</span>
+    <span class="na">android:background=</span><span class="s">&quot;@color/cube_mints_white&quot;</span><span class="nt">&gt;</span>
+
+    <span class="nt">&lt;ListView</span>
+        <span class="na">android:id=</span><span class="s">&quot;@+id/load_more_small_image_list_view&quot;</span>
+        <span class="na">android:layout_width=</span><span class="s">&quot;match_parent&quot;</span>
+        <span class="na">android:layout_height=</span><span class="s">&quot;match_parent&quot;</span>
+        <span class="na">android:divider=</span><span class="s">&quot;@null&quot;</span>
+        <span class="na">android:fadingEdge=</span><span class="s">&quot;none&quot;</span>
+        <span class="na">android:listSelector=</span><span class="s">&quot;@android:color/transparent&quot;</span>
+        <span class="na">android:paddingLeft=</span><span class="s">&quot;12dp&quot;</span>
+        <span class="na">android:paddingRight=</span><span class="s">&quot;12dp&quot;</span>
+        <span class="na">android:scrollbarStyle=</span><span class="s">&quot;outsideOverlay&quot;</span> <span class="nt">/&gt;</span>
+
+<span class="nt">&lt;/in.srain.cube.views.loadmore.LoadMoreListViewContainer&gt;</span>
+</code></pre></div></li>
+<li><p>GridViewWithHeaderAndFooter</p>
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;in.srain.cube.views.loadmore.LoadMoreGridViewContainer</span>
+    <span class="na">android:id=</span><span class="s">&quot;@+id/load_more_grid_view_container&quot;</span>
+    <span class="na">android:layout_width=</span><span class="s">&quot;match_parent&quot;</span>
+    <span class="na">android:layout_height=</span><span class="s">&quot;match_parent&quot;</span>
+    <span class="na">android:background=</span><span class="s">&quot;@color/cube_mints_white&quot;</span><span class="nt">&gt;</span>
+
+    <span class="nt">&lt;in.srain.cube.views.GridViewWithHeaderAndFooter</span>
+        <span class="na">android:id=</span><span class="s">&quot;@+id/load_more_grid_view&quot;</span>
+        <span class="na">android:layout_width=</span><span class="s">&quot;match_parent&quot;</span>
+        <span class="na">android:layout_height=</span><span class="s">&quot;match_parent&quot;</span>
+        <span class="na">android:fadingEdge=</span><span class="s">&quot;none&quot;</span>
+        <span class="na">android:focusable=</span><span class="s">&quot;false&quot;</span>
+        <span class="na">android:horizontalSpacing=</span><span class="s">&quot;10dp&quot;</span>
+        <span class="na">android:listSelector=</span><span class="s">&quot;@android:color/transparent&quot;</span>
+        <span class="na">android:numColumns=</span><span class="s">&quot;2&quot;</span>
+        <span class="na">android:paddingLeft=</span><span class="s">&quot;12dp&quot;</span>
+        <span class="na">android:paddingRight=</span><span class="s">&quot;12dp&quot;</span>
+        <span class="na">android:scrollbarStyle=</span><span class="s">&quot;outsideOverlay&quot;</span>
+        <span class="na">android:stretchMode=</span><span class="s">&quot;columnWidth&quot;</span> <span class="nt">/&gt;</span>
+
+<span class="nt">&lt;/in.srain.cube.views.loadmore.LoadMoreGridViewContainer&gt;</span>
+</code></pre></div></li>
+</ol>
+
+<h3 id="代码中配置">代码中配置</h3>
+
+<ol>
+<li><p>findViewById, 配置</p>
+<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="c1">// 获取view的引用</span>
+<span class="kd">final</span> <span class="n">LoadMoreListViewContainer</span> <span class="n">loadMoreListViewContainer</span> <span class="o">=</span> <span class="o">(</span><span class="n">LoadMoreListViewContainer</span><span class="o">)</span> <span class="n">view</span><span class="o">.</span><span class="na">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">load_more_list_view_container</span><span class="o">);</span>
+
+<span class="c1">// 使用默认样式</span>
+<span class="n">loadMoreListViewContainer</span><span class="o">.</span><span class="na">useDefaultHeader</span><span class="o">();</span>
+</code></pre></div></li>
+<li><p>加载更多数据</p>
+
+<p>当列表滑动到最底部时，触发加载更多操作，这时你需要从网络加载数据或者从数据去读取:</p>
+<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">loadMoreListViewContainer</span><span class="o">.</span><span class="na">setLoadMoreHandler</span><span class="o">(</span><span class="k">new</span> <span class="nf">LoadMoreHandler</span><span class="o">()</span> <span class="o">{</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onLoadMore</span><span class="o">(</span><span class="n">LoadMoreContainer</span> <span class="n">loadMoreContainer</span><span class="o">)</span> <span class="o">{</span>
+        <span class="c1">// 请求下一页数据</span>
+        <span class="n">mDataModel</span><span class="o">.</span><span class="na">queryNextPage</span><span class="o">();</span>
+    <span class="o">}</span>
+<span class="o">});</span>
+</code></pre></div></li>
+<li><p>加载完成之后，设置状态</p>
+
+<ul>
+<li>是否内容为空</li>
+<li>是否有更多内容</li>
+</ul>
+<div class="highlight"><pre><code class="language-text" data-lang="text">// 数据加载完后，设置是否为空，是否有更多
+loadMoreListViewContainer.loadMoreFinish(mDataModel.getListPageInfo().isEmpty(), mDataModel.getListPageInfo().hasMore());
+
+// 更新列表显示
+mAdapter.notifyDataSetChanged();
+</code></pre></div></li>
+<li><p>加载失败处理</p>
+<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kt">int</span> <span class="n">errorCode</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+<span class="n">String</span> <span class="n">errorMessage</span> <span class="o">=</span> <span class="s">&quot;加载失败，点击加载更多&quot;</span><span class="o">;</span>
+<span class="n">loadMoreListViewContainer</span><span class="o">.</span><span class="na">loadMoreError</span><span class="o">(</span><span class="n">errorCode</span><span class="o">,</span> <span class="n">errorMessage</span><span class="o">);</span>
+</code></pre></div></li>
+</ol>
+
+<h1 id='customize'>自定义UI</h1>
+
+<hr>
+
+<p>默认样式实在是太简单了，甚至简陋了。各个应用都有自己丰富的UI表现形式。</p>
+
+<p>目前设计可以很方便地定制UI样式:</p>
+
+<h3 id="接口定义">接口定义</h3>
+
+<p>默认样式支持几种状态显示:</p>
+
+<ol>
+<li>加载中</li>
+<li>加载完毕，数据为空</li>
+<li>加载完毕，没有更多数据</li>
+<li>点击加载更多</li>
+<li>加载失败</li>
+</ol>
+
+<p>对于以上几种状态，抽象出接口, <code>LoadMoreUIHandler</code>, 处理加载时各种状态:</p>
+<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">LoadMoreUIHandler</span> <span class="o">{</span>
+
+    <span class="c1">// 加载中</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onLoading</span><span class="o">(</span><span class="n">LoadMoreContainer</span> <span class="n">container</span><span class="o">);</span>
+
+    <span class="c1">// 加载完成: 数据为空 / 没有更多</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onLoadFinish</span><span class="o">(</span><span class="n">LoadMoreContainer</span> <span class="n">container</span><span class="o">,</span> <span class="kt">boolean</span> <span class="n">empty</span><span class="o">,</span> <span class="kt">boolean</span> <span class="n">hasMore</span><span class="o">);</span>
+
+    <span class="c1">// 等待加载更多</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onWaitToLoadMore</span><span class="o">(</span><span class="n">LoadMoreContainer</span> <span class="n">container</span><span class="o">);</span>
+
+    <span class="c1">// 加载失败</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onLoadError</span><span class="o">(</span><span class="n">LoadMoreContainer</span> <span class="n">container</span><span class="o">,</span> <span class="kt">int</span> <span class="n">errorCode</span><span class="o">,</span> <span class="n">String</span> <span class="n">errorMessage</span><span class="o">);</span>
+<span class="o">}</span>
+</code></pre></div>
+<h3 id="接口实现">接口实现</h3>
+
+<p>实现该接口之后, 比如有一个类实现了此接口，负责各种状态显示, <code>ISLoadMoreFooterView</code>, 如下:</p>
+<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">ISLoadMoreFooterView</span> <span class="kd">extends</span> <span class="n">RelativeLayout</span> 
+        <span class="kd">implements</span> <span class="n">LoadMoreUIHandler</span> <span class="o">{</span>
+
+<span class="o">}</span>
+</code></pre></div>
+<h3 id="使用">使用</h3>
+<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="c1">// 创建</span>
+<span class="n">ISLoadMoreFooterView</span> <span class="n">footerView</span> <span class="o">=</span> <span class="k">new</span> <span class="nf">ISLoadMoreFooterView</span><span class="o">(</span><span class="n">container</span><span class="o">.</span><span class="na">getContext</span><span class="o">());</span>
+
+<span class="c1">// 根据实际情况设置样式</span>
+<span class="n">AbsListView</span><span class="o">.</span><span class="na">LayoutParams</span> <span class="n">lp</span> <span class="o">=</span> <span class="k">new</span> <span class="n">AbsListView</span><span class="o">.</span><span class="na">LayoutParams</span><span class="o">(-</span><span class="mi">2</span><span class="o">,</span> <span class="n">LocalDisplay</span><span class="o">.</span><span class="na">dp2px</span><span class="o">(</span><span class="mi">80</span><span class="o">));</span>
+<span class="n">footerView</span><span class="o">.</span><span class="na">setLayoutParams</span><span class="o">(</span><span class="n">lp</span><span class="o">);</span>
+
+<span class="c1">// 设置</span>
+<span class="n">container</span><span class="o">.</span><span class="na">setLoadMoreView</span><span class="o">(</span><span class="n">footerView</span><span class="o">);</span>
+<span class="n">container</span><span class="o">.</span><span class="na">setLoadMoreUIHandler</span><span class="o">(</span><span class="n">footerView</span><span class="o">);</span>
+</code></pre></div>
+        </div>
+        <div class="col-md-3">
+          <div class="bs-sidebar hidden-print" role="complementary">
+            <ul class="nav bs-sidenav">
+                <!-- auto gen -->
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Footer
+================================================== -->
+<footer class="bs-footer" role="contentinfo">
+  <div class="container">
+    <ul class="footer-links muted">
+      <li>Document framework powered by <a href="http://bt-docs.liaohuqiu.net">Bt-docs</a></li>
+      <li>&middot;</li>
+      <li>Proudly hosted by <a href="https://pages.github.com">Github Pages</a></li>
+    </ul>
+  </div>
+</footer>
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="/assets/js/jquery.min.js"></script>
+<script src="/dist/js/bootstrap.min.js"></script>
+<script src="/assets/js/docs.min.js"></script>
+
+  </body>
+</html>
