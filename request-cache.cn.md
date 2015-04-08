@@ -1,7 +1,7 @@
 ---
 layout: default
 title: 请求缓存
-lead: ""
+lead: "距本文档更新到现在，缓存和请求又改进了很多，我正在更新文档。本文档仅供参考"
 ---
 <h1 id='cache-able-request'>CacheAbleRequest</h1>
 ---
@@ -223,12 +223,10 @@ public class CacheAbleRequest {
 
 <div class='row'>
     <div class='col-md-offset-4 col-md-4'>
-        <img src='http://cube-sdk.liaohuqiu.net/assets/img/request-cache-management.png'/>
+        <img src='http://cube-sdk.liaohuqiu.net/assets/img/request-cache-management.png' width="100%" style='border: #f1f1f1 solid 1px' />
     </div>
 </div>
-
 <br/>
-
 ---
 
 ### 设计

@@ -14,15 +14,3 @@ It's the most powerful Pull To Refresh librasy, and vesy easy to use.
 It also has been an independent project. You can `addFooterView()` and
 `addHeaderView()` for `GridView`:
 https://github.com/liaohuqiu/android-GridViewWithHeaderAndFooter
-
-<h1 id="load-more">Load More</h1>
-
-* Load More for ListView
-    <div>
-        <img src="http://srain-github.qiniudn.com/load-more/load-more-for-grid-view.gif" width="300px" style='border: #f1f1f1 solid 1px' />
-    </div>
-
-* Load More for GridView
-    <div>
-        <img src="http://srain-github.qiniudn.com/load-more/load-more-for-list-view.gif" width="300px" style='border: #f1f1f1 solid 1px'/>
-    </div>

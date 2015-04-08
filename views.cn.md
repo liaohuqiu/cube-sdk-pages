@@ -19,16 +19,3 @@ https://github.com/liaohuqiu/android-GridViewWithHeaderAndFooter
 
 <div style='margin-bottom:100px'>
 </div>
-
-<h1 id="load-more">加载更多</h1>
-
-<div class='row'>
-    <div class='col-md-4'>
-        <p>ListView 的加载更多</p>
-        <img src="http://srain-github.qiniudn.com/load-more/load-more-for-list-view.gif" width="100%" style='border: #f1f1f1 solid 1px' />
-    </div>
-    <div class='col-md-4 col-md-offset-2'>
-        <p>GridView 的加载更多</p>
-        <img src="http://srain-github.qiniudn.com/load-more/load-more-for-grid-view.gif" width="100%" style='border: #f1f1f1 solid 1px' />
-    </div>
-</div>

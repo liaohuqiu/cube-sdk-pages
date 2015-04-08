@@ -26,6 +26,19 @@ ListView 或者 GridView 滑动到底部时。自动加载更多或者手动点�
 
     普通的GridView无法支持addHeaderView 和 addFooterView。`GridViewWithHeaderAndFooter` 支持。
 
+### 截图
+
+<div class='row'>
+    <div class='col-md-4'>
+        <p>ListView 的加载更多</p>
+        <img src="http://srain-github.qiniudn.com/load-more/load-more-for-list-view.gif" width="100%" style='border: #f1f1f1 solid 1px' />
+    </div>
+    <div class='col-md-4 col-md-offset-2'>
+        <p>GridView 的加载更多</p>
+        <img src="http://srain-github.qiniudn.com/load-more/load-more-for-grid-view.gif" width="100%" style='border: #f1f1f1 solid 1px' />
+    </div>
+</div>
+
 ### 特性
 
 1. 自动加载更多 / 点击加载更多
