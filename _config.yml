@@ -42,6 +42,8 @@ left_nav:
         title:    Cache for Request
       - path:     /views
         title:    Component Views
+      - path:     /javadoc
+        title:    "Javadoc"
   cn:
     path:     /cn
     title:    Cube
@@ -58,6 +60,8 @@ left_nav:
         title:    常用组件
       - path:     /cn/load-more
         title:    加载更多
+      - path:     /javadoc
+        title:    "Javadoc"
 
 right_nav:
   - title:    English
